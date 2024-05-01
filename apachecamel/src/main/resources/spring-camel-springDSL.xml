@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:camel="http://camel.apache.org/schema/spring"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+              http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+              http://camel.apache.org/schema/spring 
+              http://camel.apache.org/schema/spring/camel-spring.xsd
+              http://www.springframework.org/schema/util 
+              http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+
+    <camelContext xmlns="http://camel.apache.org/schema/spring">
+        <!-- Add routes here -->
+        <route>
+            <from uri="file://src/test/dossiers/source3" />
+            <process ref="processeurContenuFichier" />
+            <to uri="file://src/test/dossiers/destination3majuscule" />
+            <transform>
+                <simple>${body.toLowerCase()}</simple>
+            </transform>
+            <to uri="file://src/test/dossiers/destination3minuscule" />
+        </route>
+    </camelContext>
+
+    <bean id="processeurContenuFichier" class="feb.tutos.apachecamel.processeurs.ProcesseurContenuFichier"/>
+
+</beans>
+
+
