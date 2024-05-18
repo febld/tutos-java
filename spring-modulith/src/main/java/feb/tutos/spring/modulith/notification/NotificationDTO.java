@@ -4,8 +4,6 @@ import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
 
-import feb.tutos.spring.modulith.notification.interne.NotificationType;
-
 public class NotificationDTO {
 
     @Getter @Setter private Date   date;

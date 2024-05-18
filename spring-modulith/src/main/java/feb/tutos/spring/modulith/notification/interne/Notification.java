@@ -11,6 +11,9 @@ public class Notification {
     @Getter @Setter private String           nomProduit;
     @Getter @Setter private NotificationType format;
 
+    public Notification() {
+    }
+
     public Notification( Date date, NotificationType format, String nomProduit ) {
         this.date       = date;
         this.format     = format;
