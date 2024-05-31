@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>feb.tutos</groupId>
-    <artifactId>apachecamel</artifactId>
+    <artifactId>tuto-apache-camel</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>apachecamel</name>
+    <name>tuto-apache-camel</name>
     <description>Demo project for Apache Camel with Spring Boot</description>
     <properties>
         <java.version>17</java.version>
