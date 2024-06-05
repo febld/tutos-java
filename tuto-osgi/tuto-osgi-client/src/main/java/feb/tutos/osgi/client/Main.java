@@ -1,4 +1,4 @@
-package feb.tutos.java;
+package feb.tutos.osgi.client;
 
 public class Main {
     public static void main(String[] args) {
