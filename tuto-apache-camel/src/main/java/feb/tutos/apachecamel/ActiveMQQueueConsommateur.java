@@ -24,7 +24,7 @@ public class ActiveMQQueueConsommateur {
 //        camel.run();
         CamelContext contexte = new DefaultCamelContext();
         ConnectionFactory connectionFactory = new ActiveMQConnectionFactory( "tcp://localhost:61616" );
-        contexte.addComponent("activemq", JmsComponent.jmsComponentAutoAcknowledge( connectionFactory ));
+        contexte.addComponent( "activemq", JmsComponent.jmsComponentAutoAcknowledge( connectionFactory ));
         contexte.addRoutes( new RouteBuilder() {
 
             @Override
@@ -32,7 +32,7 @@ public class ActiveMQQueueConsommateur {
                 from("activemq:queue:test" )
                         .log( "Traitement queue test" )
                         .delay( 2000 )
-                        .to("stream:out");
+                        .to( "stream:out" );
             }
         });
         contexte.start();

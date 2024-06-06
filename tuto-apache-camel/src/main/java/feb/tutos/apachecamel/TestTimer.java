@@ -11,8 +11,13 @@ public class TestTimer {
 
             @Override
             public void configure() throws Exception {
-                from( "timer://foo?period=1000" )
-                        .setBody(simple( "bonjour à ${header.firedTime}"))
+                from( "timer://foo?includeMetadata=true&period=1000" )
+                        .setBody(simple( "bonjour à ${header.CamelTimerFiredTime}"))
+                        .log( "--------" )
+                        .log( "headers  : ${headers}")
+                        .log( "headers  : TIMER_FIRED_TIME  = ${headers.CamelTimerFiredTime}")
+                        .log( "property : CamelTimerCounter = ${exchangeProperty.CamelTimerCounter}")
+                        .log( "body     : ${body}" )
                         .to( "file:sortie" );
             }
         });
