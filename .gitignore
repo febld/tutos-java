@@ -1,6 +1,8 @@
-target/
+**/target/
 **/src/main/**/target/
 **/src/test/**/target/
+tuto-apache-camel/src/test/dossiers
+tmp
 
 .mvn/
 !.mvn/wrapper/maven-wrapper.jar

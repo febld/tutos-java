@@ -20,7 +20,7 @@ public class ActiveMQTopicSouscripteur {
             public void configure() throws Exception {
                 from("activemq:topic:testTopic" )
                         .log( "Reception testTopic" )
-                        .to("file:sortieTestTopic");
+                        .to("file:tmp?filename=TestTopic-${date:now:yyyyMMdd-HHmmssSSS}" );
             }
         });
         contexte.start();

@@ -31,7 +31,7 @@ public class ModificationExchange {
                         .log( "body     : ${body}" )
                         .log( "body     : taille = ${body.size}" )                                    // "body.size" si liste, "body.length" si chaine
                         .log( "body     : valeur 1er=${body[0]}, 5eme=${body[4]}");
-                        //.to( "file:sortieModificationExchange" );
+                        //.to( "file:tmp?filename=CanalModificationExchange-${date:now:yyyyMMddss}" );
             }
         });
         camel.run();

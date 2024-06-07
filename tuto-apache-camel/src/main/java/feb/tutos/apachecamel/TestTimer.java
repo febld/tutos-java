@@ -18,7 +18,7 @@ public class TestTimer {
                         .log( "headers  : TIMER_FIRED_TIME  = ${headers.CamelTimerFiredTime}")
                         .log( "property : CamelTimerCounter = ${exchangeProperty.CamelTimerCounter}")
                         .log( "body     : ${body}" )
-                        .to( "file:sortie" );
+                        .to( "file:tmp?filename=TestTimer-${date:now:yyyyMMddss}" );
             }
         });
         camel.run();

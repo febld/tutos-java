@@ -18,7 +18,7 @@ public class DirectChannelExchange {
 
                 from( "direct:monCanalDirect" )
                         .log( "body 2 : ${body}" )
-                        .to( "file:sortieCanalDirect?filename=monCanalDirect-${date:now:yyyyMMddss}" );
+                        .to( "file:tmp?filename=CanalDirect-${date:now:yyyyMMddss}" );
             }
         });
         camel.run();
